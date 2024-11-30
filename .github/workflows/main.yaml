@@ -8,6 +8,9 @@ on:
 jobs:
   client-build:
     runs-on: self-hosted
+    strategy:
+      matrix:
+        node-version: [18, 20] # Define Node.js versions to test
 
     steps:
       - name: Checkout Code
@@ -16,7 +19,7 @@ jobs:
       - name: Setup Node.js
         uses: actions/setup-node@v3
         with:
-          node-version: 18
+          node-version: ${{ matrix.node-version }}
 
       - name: Install Dependencies
         working-directory: mern/client
