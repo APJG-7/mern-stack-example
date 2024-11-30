@@ -6,7 +6,7 @@ on:
       - main
 
 jobs:
-  build:
+  client-build:
     runs-on: ubuntu-latest
 
     steps:
@@ -24,4 +24,20 @@ jobs:
 
       - name: Check Build
         working-directory: mern/client
-        run: npm build
+        run: npm run build
+        
+  server-build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v3
+      - name: Set Up nodejs
+        uses: actions/setup-node@v3
+      - name: Install Packages
+        working-directory: mern/server
+        run: npm install
+      - name: Build Packages
+        working-directory: mern/server
+        run: npm run build
+    
