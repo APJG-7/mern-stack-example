@@ -7,7 +7,7 @@ on:
 
 jobs:
   client-build:
-    runs-on: ubuntu-latest
+    runs-on: self-hosted
 
     steps:
       - name: Checkout Code
@@ -27,7 +27,7 @@ jobs:
         run: npm run build
         
   server-build:
-    runs-on: self-hosted
+    runs-on: ubuntu-latest
 
     steps:
       - name: Checkout Code
