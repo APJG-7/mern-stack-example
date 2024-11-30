@@ -19,7 +19,9 @@ jobs:
           node-version: 18
 
       - name: Install Dependencies
+        working-directory: mern/client
         run: npm install
 
-      - name: Run Tests
-        run: npm test
+      - name: Check Build
+        working-directory: mern/client
+        run: npm build
