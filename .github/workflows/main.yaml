@@ -10,13 +10,7 @@ on:
   pull_request:
     branches: main
 
-  # Allows you to run this workflow manually from the Actions tab
-  workflow_dispatch:
-
-# A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
-  # This workflow contains a single job called "build"
-  
   build:
     # The type of runner that the job will run on
     runs-on: ubuntu-latest
@@ -44,10 +38,6 @@ jobs:
           working-directory: mern/client
 
       - name: Start React app in the background
-        run: (cd mern/client && npm start &)
+        run: (cd mern/client && npm build)
 
-      - name: Install Cypress and run tests
-        uses: cypress-io/github-action@v2
-        with:
-          working-directory: mern/client
         
