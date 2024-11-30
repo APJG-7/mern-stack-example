@@ -37,6 +37,3 @@ jobs:
       - name: Install Packages
         working-directory: mern/server
         run: npm install
-      - name: Build Packages
-        working-directory: mern/server
-        run: npm build
