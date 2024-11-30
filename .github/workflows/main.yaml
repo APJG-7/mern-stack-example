@@ -27,7 +27,7 @@ jobs:
         run: npm run build
         
   server-build:
-    runs-on: ubuntu-latest
+    runs-on: self-hosted
 
     steps:
       - name: Checkout Code
